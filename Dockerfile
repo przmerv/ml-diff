@@ -24,7 +24,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 RUN find /app/.venv -type d -name tests -prune -exec rm -rf {} +
 
 # Train the model: writes /app/artifacts/model.joblib
-RUN /app/.venv/bin/python -m income_classifier.train
+RUN /app/.venv/bin/python -m ml_diff.train
 
 FROM python:3.14-slim AS runtime
 
@@ -45,4 +45,4 @@ ENV APP_GIT_SHA=$GIT_SHA
 USER appuser
 EXPOSE 8000
 
-CMD ["uvicorn", "income_classifier.api:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+CMD ["uvicorn", "ml_diff.api:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]

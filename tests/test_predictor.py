@@ -9,8 +9,8 @@ from typing import Any
 
 import pytest
 
-from income_classifier.features import MISSING_VALUE
-from income_classifier.predictor import Predictor
+from ml_diff.features import MISSING_VALUE
+from ml_diff.predictor import Predictor
 
 
 def test_predict_returns_one_probability_per_row(

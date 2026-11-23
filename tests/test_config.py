@@ -1,6 +1,6 @@
 import pytest
 
-from income_classifier.config import Settings
+from ml_diff.config import Settings
 
 
 def test_env_var_overrides_default(monkeypatch: pytest.MonkeyPatch) -> None:

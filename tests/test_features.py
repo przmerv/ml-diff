@@ -1,4 +1,4 @@
-from income_classifier.features import (
+from ml_diff.features import (
     CATEGORICAL_COLUMNS,
     FEATURE_COLUMNS,
     NUMERIC_COLUMNS,

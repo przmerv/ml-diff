@@ -6,7 +6,7 @@ from typing import Any
 import joblib
 import pandas as pd
 
-from income_classifier.features import CATEGORICAL_COLUMNS, FEATURE_COLUMNS, MISSING_VALUE
+from ml_diff.features import CATEGORICAL_COLUMNS, FEATURE_COLUMNS, MISSING_VALUE
 
 
 class Predictor:

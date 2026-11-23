@@ -1,8 +1,12 @@
-# income-classifier-service
+# ml-diff
 
-[![CI](https://github.com/przmerv/income-classifier-service/actions/workflows/ci.yml/badge.svg)](https://github.com/przmerv/income-classifier-service/actions/workflows/ci.yml)
+[![CI](https://github.com/przmerv/ml-diff/actions/workflows/ci.yml/badge.svg)](https://github.com/przmerv/ml-diff/actions/workflows/ci.yml)
 
-A production-style ML service that predicts the probability a person earns more than $50K a year, based on the UCI Adult Income dataset. The model is deliberately simple (logistic regression); the focus is everything around it: validation, observability, testing, containerization, and automated delivery.
+Upload a CSV, pick a target and a task, and see which model wins on your data.
+
+> **Status:** early development. This repo started as `income-classifier-service`
+> (a deployed income-prediction API) and is being turned into a model comparison
+> tool. The income API still works, and the Adult Income dataset is test case #1.
 
 ## Features
 
@@ -49,8 +53,8 @@ curl -s -X POST http://127.0.0.1:8000/predict \
 Pull the published image:
 
 ```bash
-docker pull ghcr.io/przmerv/income-classifier-service:latest
-docker run --rm -p 8000:8000 ghcr.io/przmerv/income-classifier-service:latest
+docker pull ghcr.io/przmerv/ml-diff:latest
+docker run --rm -p 8000:8000 ghcr.io/przmerv/ml-diff:latest
 ```
 
 Or build locally (the model is trained during the build):
@@ -83,7 +87,7 @@ Tests use a tiny model trained from `test-api-requests/batch.json`, so they run 
 ## Project structure
 
 ```
-src/income_classifier/
+src/ml_diff/
 ├── config.py           # settings from environment variables
 ├── features.py         # column schema and preprocessing pipeline
 ├── train.py            # trains and saves the model with its version

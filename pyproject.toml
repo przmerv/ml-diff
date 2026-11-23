@@ -1,5 +1,5 @@
 [project]
-name = "income-classifier"
+name = "ml-diff"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.scripts]
-income-classifier = "income_classifier:main"
+ml-diff = "ml_diff:main"
 
 [build-system]
 requires = ["uv_build>=0.12.17,<0.13.0"]
@@ -50,4 +50,4 @@ ignore_missing_imports = true
 testpaths = ["tests"]
 
 [tool.uv.build-backend]
-module-name = "income_classifier"
+module-name = "ml_diff"

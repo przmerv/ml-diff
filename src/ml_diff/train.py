@@ -15,8 +15,8 @@ from sklearn.datasets import fetch_openml
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import train_test_split
 
-from income_classifier.config import Settings
-from income_classifier.features import (
+from ml_diff.config import Settings
+from ml_diff.features import (
     CATEGORICAL_COLUMNS,
     FEATURE_COLUMNS,
     POSITIVE_LABEL,

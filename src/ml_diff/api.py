@@ -10,10 +10,10 @@ from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.responses import StreamingResponse
 from pydantic import ValidationError
 
-from income_classifier.config import Settings
-from income_classifier.logging_config import request_id_var, setup_logging
-from income_classifier.predictor import Predictor
-from income_classifier.schemas import BatchRequest, Person, PredictResponse, VersionResponse
+from ml_diff.config import Settings
+from ml_diff.logging_config import request_id_var, setup_logging
+from ml_diff.predictor import Predictor
+from ml_diff.schemas import BatchRequest, Person, PredictResponse, VersionResponse
 
 logger = logging.getLogger(__name__)
 
@@ -93,7 +93,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
 
 
 app = FastAPI(
-    title="income-classifier-service",
+    title="ml-diff",
     description="Predicts the probability that a person earns more than $50K a year.",
     lifespan=lifespan,
 )

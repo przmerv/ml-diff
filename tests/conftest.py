@@ -13,9 +13,9 @@ import pandas as pd
 import pytest
 from fastapi.testclient import TestClient
 
-from income_classifier.api import app
-from income_classifier.features import build_pipeline
-from income_classifier.schemas import Person
+from ml_diff.api import app
+from ml_diff.features import build_pipeline
+from ml_diff.schemas import Person
 
 REQUESTS_DIR = Path(__file__).parent.parent / "test-api-requests"
 

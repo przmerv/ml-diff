@@ -17,13 +17,13 @@ format:
 	uv run ruff format .
 
 train:
-	uv run python -m income_classifier.train
+	uv run python -m ml_diff.train
 
 serve:
-	uv run uvicorn income_classifier.api:app --reload --no-access-log
+	uv run uvicorn ml_diff.api:app --reload --no-access-log
 
 docker-build:
-	docker build -t income-classifier-service:local .
+	docker build -t ml-diff:local .
 
 docker-run:
-	docker run --rm -p 8000:8000 --name income-classifier income-classifier-service:local
+	docker run --rm -p 8000:8000 --name ml-diff ml-diff:local
